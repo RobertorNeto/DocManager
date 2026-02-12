@@ -31,6 +31,7 @@ body,html {
     align-items: center;
     justify-content: center;
     display: flex;
+    cursor: pointer;
 }
 
 .novo-documento:hover{

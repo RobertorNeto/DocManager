@@ -236,7 +236,8 @@ document.getElementById('formComentario').addEventListener('submit', async (e) =
 
     try {
         await enviarComentario(id);
-        alert('Sucesso! Documento enviado.');     
+        alert('Sucesso! Documento enviado.');
+        document.getElementById('formComentario').reset();
         abrirModalComentarios(id)
     } catch (erro) {
         alert(erro.message); 
