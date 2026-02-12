@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Documentos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+
+        <div class="titulo">
+            <div class="logo">
+                <img src="icons/document.svg" alt="Upload" class="document-svg">
+            </div>
+            <h1>Gestão de Documentos</h1>
+        </div>
+
+        <button class="novo-documento">
+            <img src="icons/upload.svg" alt="Upload" class="upload-svg">
+            Novo Documento
+        </button>
+
+    </header>
+
+    <div class="corpo">
+        <div class="card">
+            <h2>Documentos Recentes</h2>
+            <div id="listaDocumentos">
+                <p style="text-align: center; color: #777;">Carregando documentos...</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="modalUpload" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Novo Documento</h2>
+            </div>
+            
+            <form id="uploadForm">
+                <div class="form-group">
+                    <label for="titulo">Título</label>
+                    <input type="text" id="titulo" name="titulo" placeholder="Ex: Relatório Financeiro" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="descricao">Descrição (Opcional)</label>
+                    <textarea id="descricao" name="descricao" placeholder="Do que se trata este arquivo..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="file">Arquivo (PDF, JPG, PNG)</label>
+                    <input type="file" id="file" name="file" accept=".pdf, .jpg, .png" required>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn-cancelar" id="btnCancelarModal">Cancelar</button>
+                    <button type="submit" class="btn-salvar">Salvar Documento</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+   <div id="modalComentario" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Comentários</h2>
+            </div>
+            
+            <div id="listaComentariosExistentes" class='lista-comentarios'>
+                <p>Carregando...</p>
+            </div>
+
+            <form id="formComentario">  
+                <div class="form-group">
+                    <label for="textoComentario">Novo Comentário</label>
+                    <textarea id="textoComentario" name="texto" rows="3" placeholder="Escreva aqui..." required></textarea>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn-cancelar" onclick="document.getElementById('modalComentario').style.display='none'">Fechar</button>
+                    <button type="submit" class="btn-salvar">Enviar Comentário</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>   
+</body>
+</html>
