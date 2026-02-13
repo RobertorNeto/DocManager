@@ -1,7 +1,9 @@
 const botaoModal = document.querySelector('.novo-documento');
 const modal = document.getElementById('modalUpload');
 const btnCancelar = document.getElementById('btnCancelarModal');
-const apiUrl = 'https://docmanager-wwx7.onrender.com'
+const apiUrl = window.location.hostname.includes('localhost') || window.location.hostname.includes('127.0.0.1')
+    ? 'http://localhost:5000'                 
+    : 'https://docmanager-wwx7.onrender.com'
 
 botaoModal.addEventListener('click', function() {
     modal.style.display = "flex"; 
