@@ -62,3 +62,8 @@ Após o terminal confirmar que os containers estão rodando, utilize os links ab
 A aplicação também está disponível nos seguintes links de produção:
 
 * **Aplicação (Full-Stack):** [Acessar via Vercel](https://doc-manager-robertoneto.vercel.app/)
+
+### ⚠️ Cuidado com a persistência de Dados (Render)
+
+Por ter sido utilizado o armazenamento local dos arquivos (utilização do SQLite que é um arquivo db local), o render quando inutilizado por mais de 15 minutos vai fazer um shutdown e reinicia tudo que foi criado.
+Desta maneira todos os arquivos e informações persistidas no banco de dados são perdidas quando ele reinicia. Dessa forma cuidado em não deixar o backend inativo para não perder seus documentos.
